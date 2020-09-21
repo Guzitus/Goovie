@@ -1,5 +1,7 @@
 package com.augusto.domain.model
 
+import java.io.Serializable
+
 data class Movie(
     val display_title: String,
     val val_rating: String,
@@ -10,9 +12,9 @@ data class Movie(
     val publication_date: String,
     val opening_date: String? = null,
     val date_updated: String,
-    val link: Link,
+    val link: Link?,
     val multimedia: Multimedia
-)
+) : Serializable
 
 data class Link(val type: String, val url: String, val suggested_link_text: String)
 data class Multimedia(val type: String, val src: String? = null, val width: Int, val height: Int)

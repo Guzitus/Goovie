@@ -11,7 +11,7 @@ import com.augusto.domain.model.Movie
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class MainActivityViewModel(
+class MoviesViewModel(
   private val getMoviesUseCase: GetMoviesUseCase,
   private val searchMoviesUseCase: SearchMoviesUseCase
 

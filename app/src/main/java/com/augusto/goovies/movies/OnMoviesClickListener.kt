@@ -1,5 +1,7 @@
 package com.augusto.goovies.movies
 
+import com.augusto.domain.model.Movie
+
 interface OnMoviesClickListener {
-    fun OnMovieItemClicked(position: Int)
+    fun OnMovieItemClicked(movie: Movie)
 }

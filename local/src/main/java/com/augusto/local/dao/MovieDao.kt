@@ -10,9 +10,9 @@ import com.augusto.local.entity.MovieEntity
 interface MovieDao {
 
     @Insert
-    fun addMovies(list: List<MovieEntity>)
+    suspend fun addMovies(list: List<MovieEntity>)
 
 
     @Query("SELECT * FROM movieentity")
-    fun getMovies(): List<MovieEntity>
+    suspend fun getMovies(): List<MovieEntity>
 }

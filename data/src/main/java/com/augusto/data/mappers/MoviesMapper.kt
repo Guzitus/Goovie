@@ -1,5 +1,6 @@
 package com.augusto.data.mappers
 
+import com.augusto.domain.model.Link
 import com.augusto.domain.model.Movie
 import com.augusto.domain.model.Multimedia
 import com.augusto.local.entity.MovieEntity
@@ -14,12 +15,13 @@ fun Movie.toDomain(): MovieEntity = MovieEntity(
     publication_date,
     opening_date,
     date_updated,
-    image = multimedia.src ?: ""
+    image = multimedia.src ?: "",
+    link = link?.url
 )
 
 fun MovieEntity.toDomain(): Movie = Movie(
     display_title,
-    val_rating,
+    val_rating ?: "",
     critics_pick,
     byline,
     headline,
@@ -33,5 +35,7 @@ fun MovieEntity.toDomain(): Movie = Movie(
         height = 0,
         type = ""
     ),
-    link = null
+    link = Link(
+        url = link ?: ""
+    )
 )

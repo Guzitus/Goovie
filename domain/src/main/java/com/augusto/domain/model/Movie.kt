@@ -16,7 +16,7 @@ data class Movie(
     val multimedia: Multimedia
 ) : Serializable
 
-data class Link(val type: String, val url: String, val suggested_link_text: String)
+data class Link(val type: String = "", val url: String, val suggested_link_text: String = "")
 data class Multimedia(val type: String, val src: String? = null, val width: Int, val height: Int)
 
 

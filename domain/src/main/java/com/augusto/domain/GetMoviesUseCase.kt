@@ -12,6 +12,7 @@ class GetMoviesUseCase(
     override suspend fun execute(params: Unit): List<Movie> {
         return try {
             val movies = moviesRepository.getMovies()?.results
+
             moviesLocalRespository.takeIf { movies != null && movies.isNotEmpty() }
                 ?.addMovies(movies!!)
             moviesLocalRespository.getMovies()
